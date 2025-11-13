@@ -21,6 +21,13 @@ services:
             - redis-data:/data
         networks:
             - backend
+    frontend:
+        ports:
+            - 8090:80
+        build:
+            dockerfile: ./deploy/frontend.dockerfile
+        networks:
+            - backend
 networks:
     backend:
 volumes:
